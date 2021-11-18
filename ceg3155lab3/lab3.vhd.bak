@@ -1,0 +1,16 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY lab3 IS
+	PORT(
+		i_resetBar, i_load	: IN	STD_LOGIC;
+		i_clock			: IN	STD_LOGIC;
+		o_Value			: OUT	STD_LOGIC_VECTOR(1 downto 0));
+END lab3;
+
+ARCHITECTURE rtl OF lab3 IS
+	SIGNAL int_a, int_na, int_b, int_nb : STD_LOGIC;
+	SIGNAL int_notA, int_notB : STD_LOGIC;
+
+	
+END rtl;
