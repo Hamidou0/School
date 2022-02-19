@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'GClock'
+Slack : -5.082
+TNS   : -161.167
+
+Type  : Slow 1200mV 85C Model Setup 'dFF_2:s1_state|int_q'
+Slack : -1.519
+TNS   : -10.621
+
+Type  : Slow 1200mV 85C Model Hold 'dFF_2:s1_state|int_q'
+Slack : -1.031
+TNS   : -6.855
+
+Type  : Slow 1200mV 85C Model Hold 'GClock'
+Slack : -0.038
+TNS   : -0.038
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -147.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'dFF_2:s1_state|int_q'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Setup 'GClock'
+Slack : -4.425
+TNS   : -134.409
+
+Type  : Slow 1200mV 0C Model Setup 'dFF_2:s1_state|int_q'
+Slack : -1.369
+TNS   : -9.322
+
+Type  : Slow 1200mV 0C Model Hold 'dFF_2:s1_state|int_q'
+Slack : -0.924
+TNS   : -6.140
+
+Type  : Slow 1200mV 0C Model Hold 'GClock'
+Slack : -0.077
+TNS   : -0.081
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -147.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'dFF_2:s1_state|int_q'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Setup 'GClock'
+Slack : -2.361
+TNS   : -52.492
+
+Type  : Fast 1200mV 0C Model Setup 'dFF_2:s1_state|int_q'
+Slack : -0.528
+TNS   : -3.315
+
+Type  : Fast 1200mV 0C Model Hold 'dFF_2:s1_state|int_q'
+Slack : -0.657
+TNS   : -4.418
+
+Type  : Fast 1200mV 0C Model Hold 'GClock'
+Slack : -0.100
+TNS   : -0.182
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -156.044
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'dFF_2:s1_state|int_q'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

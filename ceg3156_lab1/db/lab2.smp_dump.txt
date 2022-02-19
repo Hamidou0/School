@@ -1,0 +1,8 @@
+
+State Machine - |lab1|multi4:man_mul|y
+Name y.S5 y.S4 y.S3 y.S2 y.S1 
+y.S1 0 0 0 0 0 
+y.S2 0 0 0 1 1 
+y.S3 0 0 1 0 1 
+y.S4 0 1 0 0 1 
+y.S5 1 0 0 0 1 

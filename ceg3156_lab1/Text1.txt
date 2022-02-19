@@ -1,0 +1,105 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+ENTITY lab1 IS
+	PORT (
+		i_signA 	 	: IN STD_LOGIC;
+		i_mantissaA 	: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		i_exponentA 	: IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+
+		i_signB 		: IN STD_LOGIC;
+		i_mantissaB	: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		i_exponentB 	: IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+		
+		GReset	 	: IN STD_LOGIC;
+		GClock	 	: IN STD_LOGIC;
+		
+		signOut   	: OUT STD_LOGIC;
+		overflow    : OUT STD_LOGIC;
+		mantissaOut : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		exponentOut : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+		);
+END lab1;
+
+ARCHITECTURE logicLab1 OF lab1 IS
+
+
+	signal signA 	 	: STD_LOGIC;
+	signal mantissaA : STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
+	signal exponentA : STD_LOGIC_VECTOR (6 DOWNTO 0):="0000000";
+
+	signal signB 		: STD_LOGIC;
+	signal mantissaB	: STD_LOGIC_VECTOR(7 DOWNTO 0):="00000000";
+	signal exponentB : STD_LOGIC_VECTOR (6 DOWNTO 0):="0000000";
+
+	signal seting       : std_LOGIC; 
+	signal exponentA_8b : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal exponentB_8b : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal exp_add : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal exp_diff : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal exp_norm : STD_LOGIC_VECTOR(6 DOWNTO 0);
+	
+	signal mantissa_mul: STD_LOGIC_VECTOR(15 DOWNTO 0);
+	signal mantissa_norm: STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	
+	---FLOATING POINT ADDER SIGNALS
+	signal signedA_exp : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal signedB_exp : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	signal regA : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal regB : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	signal shiftAtoRegA : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal shiftBtoRegB : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	signal s0,s1,s2,s3,s4             : std_LOGIC;
+	
+	signal shiftRA,shiftRB,com,storeM : std_LOGIC;
+	
+BEGIN
+	PROCESS (GClock)
+	begin 
+	
+	if GReset = '0' then
+		seting <= '1';
+	else
+		seting <= '0';
+	end if;
+	END PROCESS;
+
+	signA <= '0' when seting = '1'
+					 else i_signA when seting = '0';
+	signB <= '0' when seting = '1'
+					 else i_signB when seting = '0';
+	mantissaA <= "00000000" when seting = '1'
+					 else i_mantissaA when seting = '0';
+	mantissaB <= "00000000" when seting = '1'
+					 else i_mantissaB when seting = '0';
+	exponentA <= "0000000" when seting = '1'
+					 else i_exponentA when seting = '0';
+	exponentB <= "0000000" when seting = '1'
+					 else i_exponentB when seting = '0';
+					 
+	--MULTIPLICATION CONTROLS - SIGNALS
+	extA: work.ext_6to8 PORT MAP (exponentA, exponentA_8b, GClock);
+	extB: work.ext_6to8 PORT MAP (exponentB, exponentB_8b,GClock);
+	ext_add: work.add8 PORT MAP('0',exponentA_8b,exponentB_8b,'0',exp_add,open,GClock);
+	ext_diff: work.add8 PORT MAP('0',exp_add,"00111111",'1',exp_diff,open,GClock);
+	exp_norm <= exp_diff(6 DOWNTO 0);
+	
+	man_mul: work.multi4 PORT MAP(mantissaA,mantissaB, mantissa_mul,overflow,open,GReset,GClock);
+	man_normalization: work.normalization16to8 PORT MAP(mantissa_mul,mantissa_norm,GClock);
+	
+	--ADDER DATAPATH - CONTROLS
+	
+	regA_ mux: work.mux2_1_8b(shiftRA,mantissaA, shiftAtoRegA, regA);
+	
+	
+	--OUTPUT SIGNALS
+	signOut <= signA xor signB;
+	mantissaOut <= mantissa_norm;
+	exponentOut <= exp_norm;
+
+END logicLab1;	

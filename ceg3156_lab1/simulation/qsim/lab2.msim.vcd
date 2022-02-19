@@ -1,0 +1,668 @@
+$comment
+	File created using the following command:
+		vcd file lab2.msim.vcd -direction
+$end
+$date
+	Sun Oct 31 14:26:28 2021
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab2_vlg_vec_tst $end
+$var reg 1 ! CLK $end
+$var reg 4 " input1 [3:0] $end
+$var reg 4 # input2 [3:0] $end
+$var reg 1 $ reset $end
+$var wire 1 % cout [2] $end
+$var wire 1 & cout [1] $end
+$var wire 1 ' cout [0] $end
+$var wire 1 ( outp [7] $end
+$var wire 1 ) outp [6] $end
+$var wire 1 * outp [5] $end
+$var wire 1 + outp [4] $end
+$var wire 1 , outp [3] $end
+$var wire 1 - outp [2] $end
+$var wire 1 . outp [1] $end
+$var wire 1 / outp [0] $end
+$var wire 1 0 overf [7] $end
+$var wire 1 1 overf [6] $end
+$var wire 1 2 overf [5] $end
+$var wire 1 3 overf [4] $end
+$var wire 1 4 overf [3] $end
+$var wire 1 5 overf [2] $end
+$var wire 1 6 overf [1] $end
+$var wire 1 7 overf [0] $end
+$var wire 1 8 zero $end
+$var wire 1 9 sampler $end
+$scope module i1 $end
+$var wire 1 : gnd $end
+$var wire 1 ; vcc $end
+$var wire 1 < unknown $end
+$var tri1 1 = devclrn $end
+$var tri1 1 > devpor $end
+$var tri1 1 ? devoe $end
+$var wire 1 @ y.S5~q $end
+$var wire 1 A y.S5~0_combout $end
+$var wire 1 B input2[2]~input_o $end
+$var wire 1 C input2[1]~input_o $end
+$var wire 1 D outp[0]~output_o $end
+$var wire 1 E outp[1]~output_o $end
+$var wire 1 F outp[2]~output_o $end
+$var wire 1 G outp[3]~output_o $end
+$var wire 1 H outp[4]~output_o $end
+$var wire 1 I outp[5]~output_o $end
+$var wire 1 J outp[6]~output_o $end
+$var wire 1 K outp[7]~output_o $end
+$var wire 1 L cout[0]~output_o $end
+$var wire 1 M cout[1]~output_o $end
+$var wire 1 N cout[2]~output_o $end
+$var wire 1 O zero~output_o $end
+$var wire 1 P overf[0]~output_o $end
+$var wire 1 Q overf[1]~output_o $end
+$var wire 1 R overf[2]~output_o $end
+$var wire 1 S overf[3]~output_o $end
+$var wire 1 T overf[4]~output_o $end
+$var wire 1 U overf[5]~output_o $end
+$var wire 1 V overf[6]~output_o $end
+$var wire 1 W overf[7]~output_o $end
+$var wire 1 X input1[0]~input_o $end
+$var wire 1 Y y.S1~feeder_combout $end
+$var wire 1 Z reset~input_o $end
+$var wire 1 [ reset~inputclkctrl_outclk $end
+$var wire 1 \ y.S1~q $end
+$var wire 1 ] seting~0_combout $end
+$var wire 1 ^ seting~q $end
+$var wire 1 _ seting~clkctrl_outclk $end
+$var wire 1 ` input1[1]~input_o $end
+$var wire 1 a input1[2]~input_o $end
+$var wire 1 b input1[3]~input_o $end
+$var wire 1 c CLK~input_o $end
+$var wire 1 d CLK~inputclkctrl_outclk $end
+$var wire 1 e input2[3]~input_o $end
+$var wire 1 f Selector5~0_combout $end
+$var wire 1 g input2[0]~input_o $end
+$var wire 1 h Mux0~0_combout $end
+$var wire 1 i Mux0~1_combout $end
+$var wire 1 j Selector1~0_combout $end
+$var wire 1 k y.S3~q $end
+$var wire 1 l Selector0~0_combout $end
+$var wire 1 m y.S2~q $end
+$var wire 1 n Selector4~0_combout $end
+$var wire 1 o Selector4~1_combout $end
+$var wire 1 p Selector2~0_combout $end
+$var wire 1 q y.S4~q $end
+$var wire 1 r Selector6~0_combout $end
+$var wire 1 s left_shift|o6|int_q~q $end
+$var wire 1 t left_shift|o5|int_q~q $end
+$var wire 1 u left_shift|o4|int_q~q $end
+$var wire 1 v left_shift|o3|int_q~q $end
+$var wire 1 w reseting|a [7] $end
+$var wire 1 x reseting|a [6] $end
+$var wire 1 y reseting|a [5] $end
+$var wire 1 z reseting|a [4] $end
+$var wire 1 { reseting|a [3] $end
+$var wire 1 | reseting|a [2] $end
+$var wire 1 } reseting|a [1] $end
+$var wire 1 ~ reseting|a [0] $end
+$var wire 1 !! I [2] $end
+$var wire 1 "! I [1] $end
+$var wire 1 #! I [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b1 "
+b101 #
+0$
+0'
+0&
+0%
+x/
+x.
+x-
+x,
+0+
+0*
+0)
+0(
+07
+06
+05
+04
+03
+02
+01
+00
+08
+x9
+0:
+1;
+x<
+1=
+1>
+1?
+0@
+0A
+1B
+0C
+xD
+xE
+xF
+xG
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+1X
+1Y
+0Z
+0[
+0\
+1]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+1g
+0h
+0i
+0j
+0k
+1l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+x~
+x}
+x|
+x{
+zz
+zy
+zx
+zw
+0#!
+0"!
+0!!
+$end
+#15000
+1!
+1c
+1d
+09
+1^
+1_
+xv
+xu
+xt
+xs
+xT
+xS
+xR
+xQ
+x3
+x4
+x5
+x6
+0{
+0|
+0}
+1~
+0G
+0F
+0E
+1D
+0,
+0-
+0.
+1/
+#30000
+0!
+0c
+0d
+19
+#45000
+1!
+1c
+1d
+09
+0v
+0u
+0t
+1s
+0T
+0S
+0R
+1Q
+03
+04
+05
+16
+#60000
+0!
+0c
+0d
+19
+#75000
+1!
+1c
+1d
+09
+#90000
+0!
+0c
+0d
+19
+#105000
+1!
+1c
+1d
+09
+#120000
+0!
+0c
+0d
+19
+#135000
+1!
+1c
+1d
+09
+#150000
+0!
+0c
+0d
+19
+#165000
+1!
+1c
+1d
+09
+#180000
+0!
+0c
+0d
+19
+#195000
+1!
+1c
+1d
+09
+#200000
+1$
+1Z
+1[
+19
+#210000
+0!
+0c
+0d
+09
+#225000
+1!
+1c
+1d
+19
+1m
+1\
+1p
+0l
+0]
+#240000
+0!
+0c
+0d
+09
+#255000
+1!
+1c
+1d
+19
+1q
+0m
+0^
+0_
+1r
+0p
+1l
+#270000
+0!
+0c
+0d
+09
+#285000
+1!
+1c
+1d
+19
+0q
+1m
+1#!
+1p
+0l
+1h
+1L
+1'
+1i
+#300000
+0!
+0c
+0d
+09
+#315000
+1!
+1c
+1d
+19
+1q
+0m
+0r
+1f
+0p
+1j
+#330000
+0!
+0c
+0d
+09
+#345000
+1!
+1c
+1d
+19
+0q
+1k
+0#!
+1"!
+1p
+0j
+0h
+0L
+1M
+0'
+1&
+0i
+#360000
+0!
+0c
+0d
+09
+#375000
+1!
+1c
+1d
+19
+1q
+0k
+1r
+0p
+1l
+#390000
+0!
+0c
+0d
+09
+#405000
+1!
+1c
+1d
+19
+0q
+1m
+1#!
+1p
+0l
+1h
+1L
+1'
+1i
+#420000
+0!
+0c
+0d
+09
+#435000
+1!
+1c
+1d
+19
+1q
+0m
+0r
+1n
+0f
+0p
+1j
+1o
+#450000
+0!
+0c
+0d
+09
+#465000
+1!
+1c
+1d
+19
+0q
+1k
+0#!
+1!!
+0"!
+0n
+0j
+1A
+0h
+0L
+1N
+0M
+0'
+1%
+0&
+0i
+#480000
+0!
+0c
+0d
+09
+#495000
+1!
+1c
+1d
+19
+0k
+1@
+#510000
+0!
+0c
+0d
+09
+#525000
+1!
+1c
+1d
+19
+#540000
+0!
+0c
+0d
+09
+#555000
+1!
+1c
+1d
+19
+#570000
+0!
+0c
+0d
+09
+#585000
+1!
+1c
+1d
+19
+#600000
+0!
+0c
+0d
+09
+#615000
+1!
+1c
+1d
+19
+#630000
+0!
+0c
+0d
+09
+#645000
+1!
+1c
+1d
+19
+#660000
+0!
+0c
+0d
+09
+#675000
+1!
+1c
+1d
+19
+#690000
+0!
+0c
+0d
+09
+#705000
+1!
+1c
+1d
+19
+#720000
+0!
+0c
+0d
+09
+#735000
+1!
+1c
+1d
+19
+#750000
+0!
+0c
+0d
+09
+#765000
+1!
+1c
+1d
+19
+#780000
+0!
+0c
+0d
+09
+#795000
+1!
+1c
+1d
+19
+#810000
+0!
+0c
+0d
+09
+#825000
+1!
+1c
+1d
+19
+#840000
+0!
+0c
+0d
+09
+#855000
+1!
+1c
+1d
+19
+#870000
+0!
+0c
+0d
+09
+#885000
+1!
+1c
+1d
+19
+#900000
+0!
+0c
+0d
+09
+#915000
+1!
+1c
+1d
+19
+#930000
+0!
+0c
+0d
+09
+#945000
+1!
+1c
+1d
+19
+#960000
+0!
+0c
+0d
+09
+#975000
+1!
+1c
+1d
+19
+#990000
+0!
+0c
+0d
+09
+#1000000
